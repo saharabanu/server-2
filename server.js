@@ -33,10 +33,14 @@ router.render = (req, res) => {
         // emit socket event
         io.emit("message", {
             data: res.locals.data,
+            
         });
     }
 
     res.json(res.locals.data);
+    // console.log(data, "one")
+
+    // console.log(res.locals.data,  "two")
 };
 
 
