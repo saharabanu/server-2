@@ -23,6 +23,7 @@ router.render = (req, res) => {
         // emit socket event
         io.emit("conversation", {
             data: res.locals.data,
+            type: method === 'POST' ? 'add' : 'update',
         });
     };
 
@@ -33,6 +34,7 @@ router.render = (req, res) => {
         // emit socket event
         io.emit("message", {
             data: res.locals.data,
+            
             
         });
     }
